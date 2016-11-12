@@ -1,0 +1,124 @@
+**N_Queens**
+	: 아래 그림처럼 1의 상하좌우의 직선, 대각선에 퀸이 겹치지 않게 놓는 알고리즘 
+
+		 0  1  2  3  4  5  6  7
+	0	{0, 0, 0, 1, 0, 0, 0, 0}
+	1	{0, 1, 0, 0, 0, 0, 0, 0}
+	2	{0, 0, 0, 0, 0, 0, 1, 0}
+	3	{0, 0, 1, 0, 0, 0, 0, 0}
+	4	{0, 0, 0, 0, 0, 1, 0, 0}
+	5	{0, 0, 0, 0, 0, 0, 0, 1}
+	6	{0, 0, 0, 0, 1, 0, 0, 0}		1 : 퀸의 위치
+	7	{1, 0, 0, 0, 0, 0, 0, 0}		0 : 빈공간
+	
+	
+**상태공간트리 : 찾는 해를 포함하는 트리
+	- 해가 존재한다면 그것은 반드시 이 트리의 어떤 한 노드에 해당함
+		-> 따라서 이 트리를 체계적으로 탐색하면 해를 구할 수 있음
+	
+											start
+			-------------------------------------------------------------------------
+			|									|						|			|
+			1.1									1.2						1.3			1.4
+	----------------------------		-------------------------		-------------	-------------		
+	|			|		|		|		|		|		|		|		|	|	|	|	|	|	|	|
+	2.1			2.2		2.3		2.4		2.1		2.2		2.3		2.4
+non-promising	||||	||||	||||	||||	||||	||||	||||
+	
+	- 상태공간트리의 모든 노드를 탐색해야 하는 것은 아님
+	
+
+**되추적 기법(Backtracking)
+	: 상태공간 트리를 깊이 우선 방식으로 탐색하여 해를 찾는 알고리즘을 말한다.
+	
+	- 깊이 우선 방식 : recursion or stack
+
+
+**Design Recursion
+	[1]
+	return-type queens (arguments) {	// 1. 매개변수는 내가 현재 어떤 노드에 있는지를 지정해야 한다.
+		if non-promising
+			report failure and return;
+		else if success
+			report answer and return;
+		else
+			visit children recursively;
+	}
+			
+	[2]
+	int[] cols = new int [N+1};
+	return-type queens ( int level ) {	// 2. 매개변수 level은 현재 노드의 레벨을 표현하고,
+		if non-promising				//		1번에서 level번째 말이 어디에 놓였는지는 전역변수인
+			report failure and return;	//		배열 cols로 표현하자.
+		else if success					//		cols[i]=j는 i번 말이 (i행, j열)에 놓였음을 의미한다.
+			report answer and return;
+		else
+			visit children recursively;
+	}
+			
+	[3]
+	int[] cols = new int [N+1};
+	boolean queens ( int level ) {		// 3. return-type은 일단 boolean으로 하자.
+		if non-promising				//		즉,성공이냐 실패냐를 반환한다.
+			report failure and return;	
+		else if success					
+			report answer and return;
+		else
+			visit children recursively;
+	}		
+	
+	[4]
+	int[] cols = new int [N+1};
+	boolean queens ( int level ) {		// 4. 노드가 어떤 경우에 non-promising할까?
+		if (!promising(level))			//		일단 이 문제는 나중에 생각하자.
+			return false;	
+		else if (level==N)				// 5. Promising 테스트를 통과했다는 가정하에					
+			return true;				//		level==N이면 모든 말이 놓였다는 의미이고 따라서 성공이다.
+		for (int i=1; i<=N; i++) {
+			cols[level+1] = i ;			
+			if ( queens(level+1) )		// 6. level+1번째 말을 각각의 열에 놓은 후 recursion을 호출한다.
+				return true;
+		}
+		return false;
+	}
+	
+	[5]
+	**Promising test
+		(1)
+			  1  2  3  4  5  6  7  8
+		cols {1, 4, 2, 3,  ,  ,  ,  }
+		
+			// 1. 1~3까지 말들 간에는 충돌이 없음이 보장되어 있음
+			// 2. 따라서 마지막에 놓인 4번 말이 이전에 놓인 다른 말들과 충돌하는지 검사하는 것으로 충분
+			
+		
+		(2)
+		boolean promising (int level) {
+			for (int i=1; i<level; i++) {
+				if (cols[i] == cols[level])		// 3. 같은 열에 놓였는지 검사
+					return false;
+				else if on the same diagonal	// 4. 같은 대각선에 놓였는지 검사
+					return false;
+			}
+		}
+		
+		
+			(2)-1 check same diagonal
+							cols[level]		cols[i]
+							
+					i-th row	0-----------1		
+								|			|
+								|			|
+								|			|			level-i	 = | cols[level] - cols[i] |
+								|			|			세로길이			가로길이
+				level-th row	1-----------0			
+				
+		(3)
+		boolean promising (int level) {
+			for (int i=1; i<level; i++) {
+				if (cols[i] == cols[level])		
+					return false;
+				else if ( level-i == Math.abs(cols[level]-cols[i] )
+					return false;
+			}
+		}

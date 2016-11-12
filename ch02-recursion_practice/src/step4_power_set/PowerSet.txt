@@ -1,0 +1,107 @@
+**PowerSet**
+	: 임의의 집합 daya의 모든 부분집합을 출력하라.
+							0
+							a
+							b
+	data = {a, b, c, d}		c			2^4 = 16개
+							d
+							a b
+							a c
+							a d
+							b c
+							...
+		
+							
+**Design Recursion
+	[1]
+	{a, b, c, d, e, f} 의 모든 부분집합을 나열하려면
+		- a를 제외한 {b, c, d, e, f}의 모든 부분집합들을 나열하고
+		- {b, c, d, e, f}의 모든 부분집합에 {a}를 추가한 집합들을 나열한다.
+		
+		
+	[2]
+	{b, c, d, e, f} 의 모든 부분집합에 {a}를 추가한 집합들을 나열하려면
+		- {c, d, e, f}의 모든 부분집합들에 {a}를 추가한 집합들을 나열하고
+		- {c, d, e, f}의 모든 부분집합에 {a, b}를 추가한 집합들을 나열한다.
+		
+		
+	[3]
+	{c, d, e, f} 의 모든 부분집합에 {a}를 추가한 집합들을 나열하려면
+		- {d, e, f}의 모든 부분집합들에 {a}를 추가한 집합들을 나열하고
+		- {d, e, f}의 모든 부분집합에 {a, c}를 추가한 집합들을 나열한다.
+		
+		
+	[4]							// #사진참조(powerSet_DesignRecursion[4]_error)
+	powerSet(S){					// 1. Mission : S의 멱집합을 출력하라
+		if S is an empty set
+			print nothing;
+		else
+			let t be the first element of S;
+			find all subsets of S-{t} by calling powerSet(S-{t});
+			print the subsets;
+			print the subsets with adding t;		
+	}									// 이렇게 하려면 powerSet 함수는			
+										// 여러개의 집합들을 return 해야한다.
+										// 어떻게??
+											
+											
+	[5] 						// #사진참조(powerSet_DesignRecursion[5]_ok)
+	powerSet(P, S){					// 2 Mission : S의 멱집합을 구한 후 
+		if S is an empty set		//	 		각각에 집합 P를 합집합하여 출력하라	
+			print P;
+		else 
+			let t be the first element of S;
+			powerSet(P, S-{t});
+			powerSet(P U {t}, S-{t});
+	}									// recursion 함수가 두개의 집합을 매개변수로
+										// 받도록 설계해야 한다는 의미이다. 두번째
+										// 집합의 모든 부분집합들에 첫번째 집합을
+										// 합집합하여 출력한다.
+										
+	[6]
+	{b, c, d, e, f} 의 모든 부분집합에 {a}를 추가한 집합들을 나열하려면
+		- {c, d, e, f}의 모든 부분집합들에 {a}를 추가한 집합들을 나열하고
+		- {c, d, e, f}의 모든 부분집합에 {a, b}를 추가한 집합들을 나열한다.
+		  -----------					 ------
+		  	   |							  |
+			집합S						  	집합P
+			; k번째부터 마지막 원소까지		;처음부터 k-1번째 원소들 중 일부이다.
+			연속된 원소들이다.
+			
+			
+	[7]
+						  집합S
+						 -------
+			 0 1 2 3 4 5 6 7 8 9
+		data a b c d e f g h i j
+			  	   		 |
+			  	   		 k				// 집합 S는 data[k], ... , data[n-1]이고,
+										// 집합 P는 include[i]=true,		  	   		 
+	 include t f t t f f				//					i=0, ... , k-1인 원소들이다.
+	 		 -----------
+	 		 집합P={a,c,d}
+	 		 
+	 		 
+**상태공간트리 ( state space tree )
+
+	k=0									{}
+						exclude a		|		include a
+						---------------------------------
+						|								|
+	k=1					{}								{a}
+				ex b	|	in b				ex b	|	in b
+				-----------------				-----------------
+				|				|				|				|
+	k=2			{}				{b}				{a}				{a,b}
+				|				|				|				|
+			---------		---------		---------		---------
+			|		|		|		|		|		|		|		|
+	k=3		{}		{c}		{b}		{b,c}	{a}		{a,c}	{a,b}	{a,b,c}
+	
+	- 해를 찾기 위해 탐색할 필요가 있는 모든 후보들을 포함하는 트리
+	- 트리의 모든 노드들을 방문하면 해를 찾을 수 있다.
+	- 루트에서 출발하여 체계적으로 모든 노드를 방문하는 절차를 기술한다.
+	
+	
+	
+	

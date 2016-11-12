@@ -1,0 +1,159 @@
+**QuickSort**
+	[1] 분할정복법
+		- 분할 : 배열을 다음과 같은 조건이 만족되도록 두 부분으로 나눈다.
+				elements in lower parts <= elements in upper parts
+		- 정복 : 각 부분을 순환적으로 정렬한다.
+		- 합병 : nothing to do
+		
+		***pivot : sort의 기준점이 되는 지점
+	
+	
+	[2] 특징
+		- 정렬할 배열이 주어짐. 마지막 수를 기준(pivot)으로 삼는다.
+												pivot
+												|
+			31	8	48	73	11	3	20	29	65	15	
+		
+		- 기준보다 작은 수는 기준의 왼쪽에 나머지는 기준의 오른쪽에 오도록 재배치(분할)한다.
+						pivot
+						|
+			8	11	3	15	31	48	20	29	65	73
+			
+		- 기준의 왼쪽과 오른쪽을 각각 순환적으로 정렬한다 (정렬 완료)
+		
+			3	8	11	15	20	29	31	48	65	73
+			
+			
+	[3] Design Sort
+		(1)
+			quickSort(A[], p, r) {		// A[p, ... , r]을 정렬한다
+				if (p<r) then {
+					q = partition(A, p, r); ---------- 1) 분할 (p는 pivot의 위치)
+					quickSort(A, p, q-1);	---------- 2) 왼쪽 부분배열 정렬
+					quickSort(A, q+1, r);	---------- 3) 오른쪽 부분배열 정렬
+				}
+			}
+			
+			partition(A[], p, r) {
+				배열 A[p, ... , r] 의 원소들을 A[r]을 기준으로 양쪽으로 재배치하고
+				A[r]이 자리한 위치를 return 한다;
+			}
+			
+		(2)
+			pivot보다 작은 값을 중 마지막 값	지금 검사하려는 값
+							i					j
+			p				|					|				r
+			_	_	_	_	_	_	_	_	_	_	_	_	_	x
+			-----------------	-------------					|
+			pivot보다 작은 값들		큰 값들						pivot
+				
+			partition(A[], p, r) {
+				if A[j] >= x
+					j = j+1;
+				else {
+					i = i + 1;
+					exchange A[i] and A[j];
+					j = j + 1;				
+				}
+			}
+			
+		(3) partition 과정
+			
+			1)	i	j	
+					31	8	48	73	11	3	20	29	65	15
+			
+			2)	i		j	
+					31|	8	48	73	11	3	20	29	65	15
+					
+			3) 		i		j		
+					8 |	31|	48	73	11	3	20	29	65	15
+			
+			4) 		i			j
+					8 |	31	48|	73	11	3	20	29	65	15
+					
+			5) 		i				j
+					8 |	31	48	73|	11	3	20	29	65	15
+					
+			6) 			i				j
+					8	11|	48	73	31|	3	20	29	65	15	
+				
+			7) 				i				j
+					8	11	3 |	73	31	48|	20	29	65	15		
+				
+			8) 				i					j
+					8	11	3 |	73	31	48	20|	29	65	15
+					
+			9) 				i						j
+					8	11	3 |	73	31	48	20	29|	65	15
+					
+			10)				i							j
+					8	11	3 |	73	31	48	20	29	65|	15
+					
+			11)				i							j
+					8	11	3 |	15|	31	48	20	29	65	73|
+					
+		(4) 
+			partition(A[], p, r) {
+				x = A[r];
+				i = p-1;
+				for(int j=p; j<r; j++){
+					if(A[j] <= x) {
+						i = i + 1;
+						exchange A[i] and A[j];
+					}
+				}
+				exchange A[i+1] and A[r];
+				return i+1;
+			}
+			
+			
+	[4] 시간 복잡도
+		
+		(1) 최악의 경우 	// 사진참조 : QuickSort_TheWorstCase.jpg
+			- 항상 한 쪽은 0개, 다른 쪽은 n-1개로 분할되는 경우
+				=> 이미 정렬된 입력 데이터 (마지막 원소를 pivot으로 선택하는 경우)
+		
+		(2) 최선의 경우		// 사진참조 : QuickSort_TheBestCase.jpg
+			- 항상 절반으로 분할되는 경우
+		
+			1) Balanced Partition
+				- 항상 한쪽이 적어도 1/9 이상이 되도록 분할된다면?
+							// 사진참조 : QuickSort_Balanced_partition.jpg
+			
+		(3) 평균 시간 복잡도		// 사진참조 : QuickSort_AvgTimeComposition.jpg
+			- "평균" 혹은 "기대값"이란?
+					
+					A(n) = sigma p(I)T(I)					// p(I) : I가 입력으로
+						   -----							//		들어올 확률
+							All input instance I of size n	// T(I) : I를 정렬하는데
+															// 		걸리는 시간										
+			- 그러나, p(I)를 모름
+			- p(I)에 관한 적절한 가정을 한 후 분석
+				
+				ex) 모든 입력 인스턴스가 동일한 확률을 가진다면
+								p(I) = 1 / n!
+		
+		
+	[5] Pivot 의 선택
+		- 첫번째 값이나 마지막 값을 pivot으로 선택
+			- 이미 정렬된 데이터 혹은 거꾸로 정렬된 데이터가 최악의 경우 발생
+			- 현실의 데이트는 랜덤하지 않으므로 
+				(거꾸로) 정렬된 데이터가 입력으로 들어올 가능성은 매우 높음
+			- 따라서 좋은 방법이라고 할 수 없음
+		
+		- "Median of Three"
+			- 첫번째 값과 마지막 값, 그리고 가운데 값 중에서 
+				중간값(median)을 pivot으로 선택
+			- 최악의 경우 : 시간복잡도가 달라지지는 않음
+			
+		- Randomized QuickSort
+			- pivot을 랜덤하게 선택
+			- no worst case instance, but worst case execution
+			- 평균 시간복잡도 O(N * log N)
+			
+			
+			
+			
+			
+			
+			

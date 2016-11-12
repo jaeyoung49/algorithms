@@ -1,0 +1,159 @@
+**Heapsort**
+	
+	[1] 특징
+		- 최악의 경우 시간복잡도 : O(n*log 2 n)
+		- Sorts in place - 추가 배열 불필요
+		- 이진 힙(binary heap) 자료구조를 사용
+	
+		
+	[2] Heap의 정의	// 사진참조(heapsort-1_definition.jpg)
+		- complete binary tree 이면서	// 사진참조(heapsort-2_full or complete binary heap.jpg)
+		- heap property 를 만족해야한다
+		
+			ex) 사진참조 : heapsort-3_example.jpg
+			
+		- 동일한 데이터를 가진 서로 다른 힙
+			즉, 힙은 유일하지 않음		// 사진참조 : heapsort-4_example1.jpg
+	
+			
+	[3] Heap의 표현
+		- 힙은 일차원 배열로 표현가능 : A[1 ... n]
+			- 루트 노드 A[1]
+			- A[i]의 부모 = A[i/2]
+			- A[i]의 왼쪽 자식 = A[2i]
+			- A[i]의 오른쪽 자식 = A[2i+1]
+			
+			(힙) ---> complete binary 여야한다
+									1'	16
+						---------------------------------
+						|								|
+					2'	14							3'	10
+				-----------------				-----------------			
+				|				|				|				|
+			4'	8			5'	7			6'	9			7'	3
+			---------		-----	
+			|		|		|
+			8'		9'		10'	
+			2		4		1
+			
+			(배열)
+				index :		1'	2'	3'	4'	5'	6'	7'	8'	9'	10'
+				value :		16	14	10	8	7	9	3	2	4	1
+				
+				
+	[4] 기본연산 : MAX-HEAPIFY
+		- 전체를 힙으로 만들어라!! 		// 사진참조 : heapsort-5_MAX-HEAPIFY.jpg
+		
+		- 연산과정
+					// 사진참조 : heapsort-6_MAX-HEAPIFY_progress1~3.jpg
+					
+					
+	[5] MAX-HEAPIFY
+		
+								0
+						---------		
+						|
+						i
+				-----------------
+				|				|
+				k				0
+			---------		---------
+			|		|		|		|
+			...		...		...		...
+
+		(1) recursive version
+	
+			MAX-HEAPIFY(int[] A, int i) {			// 1) 노드 i를 root로 하는
+				if there is no child of A[i]		//	서브트리를 heapify한다.
+					return;
+				k <- index of the biggest child of i;
+				if A[i] >= A[k]
+					return;
+				exchange A[i] and A[k];
+				MAX-HEAPIFY(A, k);					// 2) root 노드에 대한 heapify는
+			}										//	MAX-HEAPIFY(1)을 호출하면 됨
+		
+		
+		(2) iterative version
+					
+			MAX-HEAPIFY(int[] A, int i) {
+				while A[i] has a child do
+					k <- index of the biggest child of i;
+					if A[i] >= A[k]
+						return;
+					exchange A[i] and A[k];
+					i = k;
+				end.		
+			}		
+					
+		(3) Example : MAX-HEAPIFY(A, 2)
+			
+			(a)		
+										1'	16
+							---------------------------------
+							|								|
+						2'	4->14						3'	10
+					-----------------				-----------------			
+					|				|				|				|
+				4'	14->4		5'	7			6'	9			7'	3
+				---------		-----	
+				|		|		|
+				8'		9'		10'	
+				2		8		1
+				
+			(b)		
+										1'	16
+							---------------------------------
+							|								|
+						2'	14							3'	10
+					-----------------				-----------------			
+					|				|				|				|
+				4'	4->8		5'	7			6'	9			7'	3
+				---------		-----	
+				|		|		|
+				8'		9'		10'	
+				2		8->4	1
+					
+			(c)		
+										1'	16
+							---------------------------------
+							|								|
+						2'	14							3'	10
+					-----------------				-----------------			
+					|				|				|				|
+				4'	8			5'	7			6'	9			7'	3
+				---------		-----	
+				|		|		|
+				8'		9'		10'	
+				2		4		1		
+					
+	[6] 정렬할 배열을 힙으로 만들기
+		
+		(1) Build-Max-Heap(A)
+			1 heap-size[a] <- length[A]
+			2 for i <- length[A]/2 downto 1
+			3 		do Max-Heapify(A, i)			
+	
+		(2) 시간복잡도
+			: O(n)		
+					
+		(3) 순서
+			(a) 주어진 데이터로 힙을 만든다.
+			(b) 힙에서 최대값(루트)을 가장 마지막 값과 바꾼다.
+			(c) 힙의 크기가 1 줄어든 것으로 간주한다. 
+				즉, 가장 마지막 값은 힙의 일부가 아닌 것으로 간주한다.
+			(d) 루트노드에 대해서 HEAPIFY(1)한다.
+			(e) 2~4번을 반복한다.
+					
+					
+	[7] Heapsort와 시간복잡도
+		
+		Heapsort(A)
+		1 Build-Max-Heap(A)					: O(n)
+		2 for i <- heap_size downto 2 do	: n-1 times
+		3	exchange A[1] <-> A[i]			: O(1)
+		4	heap_size <- heap_size -1		: O(1)
+		5 	Max-Heapify(A, 1)				: O(log 2 n)
+					
+					total time : O(n*log 2 n)
+					 

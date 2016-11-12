@@ -1,0 +1,157 @@
+**Sort Algorithms (정렬 알고리즘)**
+	
+**Kind of Sort Algorithms
+	- Selection sort	-|
+	- Bubble sort		 |- simple, slow 
+	- Insertion sort	-|
+	
+	- Quick sort		-|
+	- Merge sort		 |- fast
+	- Heap sort			-|
+	
+	- Radix sort		--- O(N)
+	
+**Basic sort
+	1. Selection Sort
+		(1) 
+													v (the largeest item)
+		initial array		29		10		14		37		13
+													|		|
+													exchange-
+													
+							v			
+		after 1st swap		29		10		14		13		'37'
+							|						|
+							--------exchange---------
+							
+											v
+		after 2nd swap		13		10		14		'29'	'37'
+											|
+											exchange
+											
+							v				
+		after 3rd swap		13		10		'14'	'29'	'37'
+							|		|
+							exchange-
+							
+							
+		after 4th swap		10		'13'	'14'	'29'	'37'
+		
+		
+		(2) Design Sort
+			selectionSort(A[], n){		// 배열 A[1...n]을 정렬한다.
+				for last n <- down to 2 {			--------------------------1)
+					A[1 ... last] 중 가장 큰수 A[k]를 찾는다;	--------------2)
+					A[k] <-> A[last];	// A[k]와 A[last]의 값을 교환 --------3)
+				}
+			}
+			
+		
+		(3) 실행시간
+			- 1)의 for 루프는 n-1번 반복
+			- 2)에서 가장 큰 수를 찾기 위한 비교횟수 : n-1, n-2, ... , 2, 1
+			- 3)의 교환은 상수시간 작업
+			
+		(4) 시간복잡도 T(n) = (n-1)+(n-2)+...+2+1 = O(n^2)
+							  -------------------
+							  		n(n-1)
+							  	=  -------- (비교연산)
+							  		  2						//최악, 최선, 평균 동일
+					
+					
+							  		  
+	2. Bubble Sort
+		(1)
+			|---|						|---|
+			29	10	14	37	13			10	14	29	13	'37'
+			
+				|---|						|---|
+			10	29	14	37	13			10	14	29	13	'37'
+			
+					|---|						|---|
+			10	14	29	37	13			10	14	29	13	'37'
+			
+						|---|
+			10	14	29	37	13			10	14	13	'29''37'
+			
+			
+			10	14	29	13	'37'					[pass 2]
+			
+						[pass 1]
+			
+			
+		(2) Design Sort
+			bubbleSort(A[], n){		// 배열 A[1...n]을 정렬한다.
+				for last n <- down to 2 {			--------------------------1)
+					for i <- 1 to last-1 			--------------------------2)
+					if (A[i] > A[i+1]) then A[i] <-> A[i+1] 교환	----------3)
+				}
+			}
+			
+		
+		(3) 실행시간
+			- 1)의 for 루프는 n-1번 반복
+			- 2)의 for 루프는 각각 n-1, n-2, ... , 2, 1번 반복
+			- 3)의 교환은 상수시간 작업
+			
+		(4) 시간복잡도 T(n) = (n-1)+(n-2)+...+2+1 = O(n^2)	
+							  -------------------
+							  		n(n-1)
+							  	=  -------- (비교연산)
+							  		  2						//최악, 최선, 평균 동일
+			
+			
+			
+	3. Insertion Sort
+		(1) 			// #사진참조(InsertionSort1, 2)
+									v (start at 2nd item)
+		initial array		15		12		13		10		14		11
+							|		|
+						insert 12 before 15
+													
+											v			
+		after 1st swap		12		15		13		10		14		11
+							----------		|
+								|			|
+								insert 13 before 15
+							
+													v
+		after 2nd swap		12		13		15		10		14		11
+							------------------		|
+									|				|
+									insert 10 before 12
+									
+															v				
+		after 3rd swap		10		12		13		15		14		11
+							--------------------------		|
+										|					|	
+										-insert 14 before 15-
+			
+																	v
+		after 4th swap		10		12		13		14		15		11
+							----------------------------------		|
+											|						|
+											---insert 11 before 12---
+			
+			
+		after 5th swap		10		11		12		13		14		15
+		
+		
+		(2) Design Sort
+			insertionSort(A[], n){		// 배열 A[1...n]을 정렬한다.
+				for i <- 2 to n {			----------------------------------1)
+					A[1...i]의 적당한 자리에 A[i]를 삽입한다	--------------2)
+				}
+			}
+			
+		
+		(3) 실행시간
+			- 1)의 for 루프는 n-1번 반복
+			- 2)의 삽입은 최악의 경우 i-1번 비교
+			
+		(4) 시간복잡도		// 사진참조(MergeSort-TimeCompostion.jpg)
+			- 최악의 경우 : T(n) = (n-1)+(n-2)+...+2+1 = O(n^2)	
+								   -------------------
+									  		n(n-1)
+									  	=  -------- (비교연산)
+									  		  2						
