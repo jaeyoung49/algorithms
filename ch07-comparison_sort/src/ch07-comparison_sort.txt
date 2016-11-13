@@ -1,0 +1,45 @@
+**Comparison Sort**
+	
+	[1] 기존 sort는 모두 최선인가?
+		: Comparison Sort에서는 O(n*log n) 보다 낮은 시간복잡도는 존재할 수 없다. 
+		
+		- 시간복잡도
+			- O(n^2)
+				- bubble
+				- selection
+				- insertion
+				- quick (최대 시간복잡도)
+			- O(n*log n)
+				- quick (평균 시간복잡도)
+				- merge
+				-heap
+			
+	[2] Comparison Sort vs. Non-Comparison Sort
+		- Comparison Sort
+			- 데이터들간의 상대적 크기관계만을 이용해서 정렬하는 알고리즘
+			- 따라서 데이터들간의 크기 관계가 정의되어 있으면 어떤 데이터에든
+				적용가능 (문자열, 알파벳, 사용자 정의 객체 등)
+			- 버블소트, 삽입정렬, 합병정렬, 큇소트, 힙정렬 등
+			
+		- Non-Comparison Sort
+			- 정렬할 데이터에 대한 사전지식을 이용 - 적용에 제한
+			- Bucket Sort
+				ex) 학생들의 성적을 90, 80, 70, ... 10 점대로 분류
+			- Radix Sort
+			
+	[3] 정렬문제의 하한(Lower bound)
+		- 하한 (Lower Bound)
+			- 입력된 데이터를 한번씩 다보기위해서 최소 세타(n)의 시간복잡도 필요
+			- MergeSort 와 HeapSort 알고리즘들의 시간복잡도는 세타(n*log n)
+			- 어떤 Comparison Sort 알고리즘도 세타(n*log n) 보다 나을 수 없다.
+			
+	[4] Decision Tree	// 사진참조(ComparisonSort-1_DecisionTree1.jpg)
+						// 사진참조(ComparisonSort-1_DecisionTree2.jpg)
+		: Abstraction of any comparison sort.
+			- Comparison Sort의 결과값을 트리형태로 보여줌
+		
+		- Leaf node의 개수?
+			: n! 개
+		- 최악의 경우 시간복잡도는 Decision Tree의 높이
+		- 트리의 높이는?
+			: height >= log n! = 세타(n*log n)  --------------> Stiring's theory
