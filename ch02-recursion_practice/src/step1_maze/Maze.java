@@ -14,8 +14,8 @@ public class Maze {
 	};
 
 	/*
-	 * 	PATH_COLOR : visitedÀÌ¸ç ¾ÆÁ÷ Ãâ±¸·Î °¡´Â °æ·Î°¡ µÉ °¡´É¼ºÀÌ ÀÖ´Â cell
-	 * 	BLOECK_COLOR : visitedÀÌ¸ç Ãâ±¸±îÁöÀÇ °æ·Î»ó¿¡ ÀÖÁö ¾ÊÀ½ÀÌ ¹àÇôÁø cell
+	 * 	PATH_COLOR : visitedì´ë©° ì•„ì§ ì¶œêµ¬ë¡œ ê°€ëŠ” ê²½ë¡œê°€ ë  ê°€ëŠ¥ì„±ì´ ìžˆëŠ” cell
+	 * 	BLOECK_COLOR : visitedì´ë©° ì¶œêµ¬ê¹Œì§€ì˜ ê²½ë¡œìƒì— ìžˆì§€ ì•ŠìŒì´ ë°í˜€ì§„ cell
 	 */
 	private static final int PATHWAY_COLOR = 0;
 	private static final int WALL_COLOR = 1;

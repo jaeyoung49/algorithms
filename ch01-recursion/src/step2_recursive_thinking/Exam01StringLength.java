@@ -1,13 +1,13 @@
 /**
- * 	recursionÀº ¼öÇÐÇÔ¼ö °è»ê¿¡¸¸ À¯¿ëÇÑ°¡?
- * 		: ¼öÇÐÇÔ¼ö»Ó ¾Æ´Ï¶ó ´Ù¸¥ ¸¹Àº ¹®Á¦µéÀ» recursionÀ¸·Î ÇØ°áÇÒ ¼ö ÀÖ´Ù.
+ * 	recursionì€ ìˆ˜í•™í•¨ìˆ˜ ê³„ì‚°ì—ë§Œ ìœ ìš©í•œê°€?
+ * 		: ìˆ˜í•™í•¨ìˆ˜ë¿ ì•„ë‹ˆë¼ ë‹¤ë¥¸ ë§Žì€ ë¬¸ì œë“¤ì„ recursionìœ¼ë¡œ í•´ê²°í•  ìˆ˜ ìžˆë‹¤.
  * 
  * 	Recursion vs. Iteration
- *		- ¸ðµç ¼øÈ¯ÇÔ¼ö´Â ¹Ýº¹¹®(iteration)À¸·Î º¯°æ °¡´É
- * 		- ±× ¿ªµµ ¼º¸³ÇÔ. Áï ¸ðµç ¹Ýº¹¹®Àº recursionÀ¸·Î Ç¥Çö°¡´ÉÇÔ
- * 		- ¼øÈ¯ÇÔ¼ö´Â º¹ÀâÇÑ ¾Ë°í¸®ÁòÀ» ´Ü¼øÇÏ°í ¾Ë±â ½±°Ô Ç¥ÇöÇÏ´Â °ÍÀ» °¡´ÉÇÏ°Ô ÇÔ
- *		- ÇÏÁö¸¸ ÇÔ¼ö È£Ãâ¿¡ µû¸¥ ¿À¹öÇØµå°¡ ÀÖÀ½
- *			(¸Å°³º¯¼ö Àü´Þ, ¾×Æ¼º£ÀÌ¼Ç ÇÁ·¹ÀÓ »ý¼º µî)
+ *		- ëª¨ë“  ìˆœí™˜í•¨ìˆ˜ëŠ” ë°˜ë³µë¬¸(iteration)ìœ¼ë¡œ ë³€ê²½ ê°€ëŠ¥
+ * 		- ê·¸ ì—­ë„ ì„±ë¦½í•¨. ì¦‰ ëª¨ë“  ë°˜ë³µë¬¸ì€ recursionìœ¼ë¡œ í‘œí˜„ê°€ëŠ¥í•¨
+ * 		- ìˆœí™˜í•¨ìˆ˜ëŠ” ë³µìž¡í•œ ì•Œê³ ë¦¬ì¦˜ì„ ë‹¨ìˆœí•˜ê³  ì•Œê¸° ì‰½ê²Œ í‘œí˜„í•˜ëŠ” ê²ƒì„ ê°€ëŠ¥í•˜ê²Œ í•¨
+ *		- í•˜ì§€ë§Œ í•¨ìˆ˜ í˜¸ì¶œì— ë”°ë¥¸ ì˜¤ë²„í•´ë“œê°€ ìžˆìŒ
+ *			(ë§¤ê°œë³€ìˆ˜ ì „ë‹¬, ì•¡í‹°ë² ì´ì…˜ í”„ë ˆìž„ ìƒì„± ë“±)
  */
 package step2_recursive_thinking;
 
@@ -17,7 +17,7 @@ public class Exam01StringLength {
 		System.out.println(length("ace"));
 	}
 	/**
-	 * 1. ¹®ÀÚ¿­ÀÇ ±æÀÌ¸¦ ¹ÝÈ¯ÇÏ´Â recursion
+	 * 1. ë¬¸ìžì—´ì˜ ê¸¸ì´ë¥¼ ë°˜í™˜í•˜ëŠ” recursion
 	 * @param str
 	 * @return
 	 */

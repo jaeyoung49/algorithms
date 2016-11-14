@@ -1,6 +1,6 @@
 package step1_recursion_basic;
 /**
- * 	5. power(Á¦°ö)
+ * 	5. power(ì œê³±)
  */
 public class Exam05Power {
 

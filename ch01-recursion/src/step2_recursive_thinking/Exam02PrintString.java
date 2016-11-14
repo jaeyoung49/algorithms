@@ -6,7 +6,7 @@ public class Exam02PrintString {
 		printChars("ShowMeTheMoney");
 	}
 	/**
-	 * 2. ¹®ÀÚ¿­À» ÇÑ±ÛÀÚ¾¿ ¼ø¼­´ë·Î Ãâ·Â
+	 * 2. ë¬¸ìì—´ì„ í•œê¸€ìì”© ìˆœì„œëŒ€ë¡œ ì¶œë ¥
 	 * @param str
 	 */
 	public static void printChars(String str){

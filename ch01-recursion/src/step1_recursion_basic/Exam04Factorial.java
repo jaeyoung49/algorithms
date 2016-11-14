@@ -4,14 +4,14 @@ package step1_recursion_basic;
   *   	- 0! = 1
   *   	- n! = n*(n-1)!, n>0
   *   
-  *		<¼øÈ¯ÇÔ¼ö¿Í ¼öÇÐÀû ±Í³³¹ý>
-  * 	 - Á¤¸® : factorial(int n)Àº À½ÀÌ ¾Æ´Ñ Á¤¼ö n¿¡ ´ëÇØ¼­ n!À» ¿Ã¹Ù·Î °è»êÇÑ´Ù
-  * 	 - Áõ¸í :
-  * 		1. n=0ÀÎ °æ¿ì : n=0ÀÎ °æ¿ì 1À» ¹ÝÈ¯ÇÑ´Ù. ¿Ã¹Ù¸£´Ù.
-  * 		2. ÀÓÀÇÀÇ ¾çÀÇ Á¤¼ö k¿¡ ´ëÇØ¼­ n<kÀÎ °æ¿ì n!À» ¿Ã¹Ù¸£°Ô °è»êÇÑ´Ù°í °¡Á¤ÇÏÀÚ.
-  * 		3. n=kÀÎ °æ¿ì¸¦ °í·ÁÇØº¸ÀÚ. factorialÀº ¸ÕÀú factorial(k-1) È£ÃâÇÏ´Âµ¥
-  * 			2¹øÀÇ °¡Á¤¿¡ ÀÇÇØ¼­ (k-1)!ÀÌ ¿Ã¹Ù·Î °è»êµÇ¾î ¹ÝÈ¯µÈ´Ù. µû¶ó¼­ ¸Þ¼­µå
-  * 			factorialÀº k*(k-1)!=k!À» ¹ÝÈ¯ÇÑ´Ù.
+  *		<ìˆœí™˜í•¨ìˆ˜ì™€ ìˆ˜í•™ì  ê·€ë‚©ë²•>
+  * 	 - ì •ë¦¬ : factorial(int n)ì€ ìŒì´ ì•„ë‹Œ ì •ìˆ˜ nì— ëŒ€í•´ì„œ n!ì„ ì˜¬ë°”ë¡œ ê³„ì‚°í•œë‹¤
+  * 	 - ì¦ëª… :
+  * 		1. n=0ì¸ ê²½ìš° : n=0ì¸ ê²½ìš° 1ì„ ë°˜í™˜í•œë‹¤. ì˜¬ë°”ë¥´ë‹¤.
+  * 		2. ìž„ì˜ì˜ ì–‘ì˜ ì •ìˆ˜ kì— ëŒ€í•´ì„œ n<kì¸ ê²½ìš° n!ì„ ì˜¬ë°”ë¥´ê²Œ ê³„ì‚°í•œë‹¤ê³  ê°€ì •í•˜ìž.
+  * 		3. n=kì¸ ê²½ìš°ë¥¼ ê³ ë ¤í•´ë³´ìž. factorialì€ ë¨¼ì € factorial(k-1) í˜¸ì¶œí•˜ëŠ”ë°
+  * 			2ë²ˆì˜ ê°€ì •ì— ì˜í•´ì„œ (k-1)!ì´ ì˜¬ë°”ë¡œ ê³„ì‚°ë˜ì–´ ë°˜í™˜ëœë‹¤. ë”°ë¼ì„œ ë©”ì„œë“œ
+  * 			factorialì€ k*(k-1)!=k!ì„ ë°˜í™˜í•œë‹¤.
   */
 public class Exam04Factorial {
 

@@ -1,6 +1,6 @@
 package step1_recursion_basic;
 /**
- * 	7. Greatest Common Divisor : GCD(ÃÖ´ë°ø¾à¼ö)
+ * 	7. Greatest Common Divisor : GCD(ìµœëŒ€ê³µì•½ìˆ˜)
  */
 public class Exam07EuclidGCD {
 
@@ -18,7 +18,7 @@ public class Exam07EuclidGCD {
 			return gcd(n, m%n);
 	}*/
 	
-	// ±»ÀÌ swapÀ» ÇÏÁö ¾Ê¾Æµµ µÈ´Ù.
+	// êµ³ì´ swapì„ í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
 	public static int gcd(int p, int q){
 		if(q==0)
 			return p;

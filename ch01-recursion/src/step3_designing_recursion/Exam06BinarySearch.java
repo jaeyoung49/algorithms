@@ -7,9 +7,9 @@ public class Exam06BinarySearch {
 	}
 	/*
 	 * 	3. BinarySearch
-	 * 		- ÆÄÀÏÅ©±â·Î ¼øÂ÷ÀûÀ¸·Î Á¤·ÄÇßÀ»°æ¿ì
-	 * 			middleº¸´Ù Å©¸é middle+1¿¡¼­ end»çÀÌ¸¦
-	 * 			middleº¸´Ù ÀÛÀ¸¸é begin¿¡¼­ middle-1»çÀÌ¸¦ °Ë»öÇÑ´Ù
+	 * 		- íŒŒì¼í¬ê¸°ë¡œ ìˆœì°¨ì ìœ¼ë¡œ ì •ë ¬í–ˆì„ê²½ìš°
+	 * 			middleë³´ë‹¤ í¬ë©´ middle+1ì—ì„œ endì‚¬ì´ë¥¼
+	 * 			middleë³´ë‹¤ ì‘ìœ¼ë©´ beginì—ì„œ middle-1ì‚¬ì´ë¥¼ ê²€ìƒ‰í•œë‹¤
 	 */
 	public static int binarySearch(String[] items, String target, int begin, int end){
 		if(begin>end)

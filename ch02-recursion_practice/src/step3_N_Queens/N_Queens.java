@@ -43,7 +43,7 @@ public class N_Queens {
 
 		/*for(int i : cols)
 			System.out.print(i + ", ");
-		System.out.println();*/			// �迭 ���� Ȯ��
+		System.out.println();*/			// ¹è¿­ »ý»ê È®ÀÎ
 		
 		queens(0);
 		

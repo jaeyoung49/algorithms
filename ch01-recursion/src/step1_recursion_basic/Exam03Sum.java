@@ -1,17 +1,17 @@
 package step1_recursion_basic;
 /**
- * 3. 1~n±îÁöÀÇ ÇÕ
+ * 3. 1~nê¹Œì§€ì˜ í•©
  * 
- * <¼øÈ¯ÇÔ¼ö¿Í ¼öÇÐÀû ±Í³³¹ý>
- * 	- Á¤¸® : function(int n)Àº À½ÀÌ ¾Æ´Ñ Á¤¼ö¿¡ n¿¡ ´ëÇØ¼­ 0¿¡¼­ n±îÁöÀÇ ÇÕÀ» ¿Ã¹Ù·Î °è»êÇÑ´Ù
- * 	- Áõ¸í : 
- * 		1. n=0ÀÎ °æ¿ì : n=0ÀÎ °æ¿ì 0À» ¹ÝÈ¯ÇÑ´Ù. ¿Ã¹Ù¸£´Ù.
- * 		2. ÀÓÀÇÀÇ ¾çÀÇ Á¤¼ö k¿¡ ´ëÇØ¼­ n<kÀÎ °æ¿ì 
- * 			0¿¡¼­ n±îÁöÀÇ ÇÕÀ» ¿Ã¹Ù¸£°Ô °è»êÇÏ¿© ¹ÝÈ¯ÇÑ´Ù°í °¡Á¤ÇÏÀÚ
- * 		3. n=kÀÎ °æ¿ì¸¦ °í·ÁÇØº¸ÀÚ.
- * 			functionÀº ¸ÕÀú function(k-1) È£ÃâÇÏ´Âµ¥ 2¹øÀÇ °¡Á¤¿¡ ÀÇÇØ¼­ 0¿¡¼­ k-1±îÁöÀÇ ÇÕÀÌ
- * 			¿Ã¹Ù·Î °è»êµÇ¾î ¹ÝÈ¯µÈ´Ù. ¸Þ¼­µå functionÀº ±× °ª¿¡ nÀ» ´õÇØ¼­ ¹ÝÈ¯ÇÑ´Ù. µû¶ó¼­
- * 			¸Þ¼­µå functionÀº 0¿¡¼­ k±îÁöÀÇ ÇÕÀ» ¿Ã¹Ù·Î °è»êÇÏ¿© ¹ÝÈ¯ÇÑ´Ù.
+ * <ìˆœí™˜í•¨ìˆ˜ì™€ ìˆ˜í•™ì  ê·€ë‚©ë²•>
+ * 	- ì •ë¦¬ : function(int n)ì€ ìŒì´ ì•„ë‹Œ ì •ìˆ˜ì— nì— ëŒ€í•´ì„œ 0ì—ì„œ nê¹Œì§€ì˜ í•©ì„ ì˜¬ë°”ë¡œ ê³„ì‚°í•œë‹¤
+ * 	- ì¦ëª… : 
+ * 		1. n=0ì¸ ê²½ìš° : n=0ì¸ ê²½ìš° 0ì„ ë°˜í™˜í•œë‹¤. ì˜¬ë°”ë¥´ë‹¤.
+ * 		2. ìž„ì˜ì˜ ì–‘ì˜ ì •ìˆ˜ kì— ëŒ€í•´ì„œ n<kì¸ ê²½ìš° 
+ * 			0ì—ì„œ nê¹Œì§€ì˜ í•©ì„ ì˜¬ë°”ë¥´ê²Œ ê³„ì‚°í•˜ì—¬ ë°˜í™˜í•œë‹¤ê³  ê°€ì •í•˜ìž
+ * 		3. n=kì¸ ê²½ìš°ë¥¼ ê³ ë ¤í•´ë³´ìž.
+ * 			functionì€ ë¨¼ì € function(k-1) í˜¸ì¶œí•˜ëŠ”ë° 2ë²ˆì˜ ê°€ì •ì— ì˜í•´ì„œ 0ì—ì„œ k-1ê¹Œì§€ì˜ í•©ì´
+ * 			ì˜¬ë°”ë¡œ ê³„ì‚°ë˜ì–´ ë°˜í™˜ëœë‹¤. ë©”ì„œë“œ functionì€ ê·¸ ê°’ì— nì„ ë”í•´ì„œ ë°˜í™˜í•œë‹¤. ë”°ë¼ì„œ
+ * 			ë©”ì„œë“œ functionì€ 0ì—ì„œ kê¹Œì§€ì˜ í•©ì„ ì˜¬ë°”ë¡œ ê³„ì‚°í•˜ì—¬ ë°˜í™˜í•œë‹¤.
  */
 public class Exam03Sum {
 
@@ -22,15 +22,15 @@ public class Exam03Sum {
 		
 	}
 	/*
-	 * ÇØ¼®¹æ¹ý
-	 * 	1. ÀÌ ÇÔ¼öÀÇ missionÀº 0~n±îÁöÀÇ ÇÕÀ» ±¸ÇÏ´Â °ÍÀÌ´Ù.
+	 * í•´ì„ë°©ë²•
+	 * 	1. ì´ í•¨ìˆ˜ì˜ missionì€ 0~nê¹Œì§€ì˜ í•©ì„ êµ¬í•˜ëŠ” ê²ƒì´ë‹¤.
 	 */
 	public static int function(int n){
-		// 2. n==0ÀÌ¶ó¸é ÇÕÀº 0ÀÌ´Ù.
+		// 2. n==0ì´ë¼ë©´ í•©ì€ 0ì´ë‹¤.
 		if(n==0)
 			return 0;
 		else
-			// 3. nÀÌ 0º¸´Ù Å©´Ù¸é 0¿¡¼­ n-1±îÁöÀÇ ÇÕ¿¡ nÀ» ´õÇÑ °ÍÀÌ´Ù.
+			// 3. nì´ 0ë³´ë‹¤ í¬ë‹¤ë©´ 0ì—ì„œ n-1ê¹Œì§€ì˜ í•©ì— nì„ ë”í•œ ê²ƒì´ë‹¤.
 			return n + function(n-1);
 	}
 

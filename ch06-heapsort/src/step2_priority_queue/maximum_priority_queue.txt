@@ -1,11 +1,11 @@
-**¿ì¼±¼øÀ§ Å¥ (maximum priority queue) : ÈüÀÇ ÀÀ¿ë**
+**ìš°ì„ ìˆœìœ„ í (maximum priority queue) : íž™ì˜ ì‘ìš©**
 	[1]
-		- ÃÖ´ë ¿ì¼±¼øÀ§ Å¥´Â ´ÙÀ½ÀÇ µÎ°¡Áö ¿¬»êÀ» Áö¿øÇÏ´Â ÀÚ·á±¸Á¶
-			- INSERT(x) : »õ·Î¿î ¿ø¼Ò x¸¦ »ðÀÔ
-			- EXTRACT_MAX() : ÃÖ´ë°ªÀ» »èÁ¦ÇÏ°í ¹ÝÈ¯
-		- ÃÖ¼Ò ¿ì¼±¼øÀ§ Å¥ (minimum priority queue)´Â EXTRACT_MAX ´ë½Å
-			EXTRACT_MINÀ» Áö¿øÇÏ´Â ÀÚ·á±¸Á¶
-		- MAX HEAPÀ» ÀÌ¿ëÇÏ¿© ÃÖ´ë ¿ì¼±¼øÀ§ Å¥¸¦ ±¸Çö 
+		- ìµœëŒ€ ìš°ì„ ìˆœìœ„ íëŠ” ë‹¤ìŒì˜ ë‘ê°€ì§€ ì—°ì‚°ì„ ì§€ì›í•˜ëŠ” ìžë£Œêµ¬ì¡°
+			- INSERT(x) : ìƒˆë¡œìš´ ì›ì†Œ xë¥¼ ì‚½ìž…
+			- EXTRACT_MAX() : ìµœëŒ€ê°’ì„ ì‚­ì œí•˜ê³  ë°˜í™˜
+		- ìµœì†Œ ìš°ì„ ìˆœìœ„ í (minimum priority queue)ëŠ” EXTRACT_MAX ëŒ€ì‹ 
+			EXTRACT_MINì„ ì§€ì›í•˜ëŠ” ìžë£Œêµ¬ì¡°
+		- MAX HEAPì„ ì´ìš©í•˜ì—¬ ìµœëŒ€ ìš°ì„ ìˆœìœ„ íë¥¼ êµ¬í˜„ 
 		
 		
 	[2] INSERT()

@@ -1,9 +1,9 @@
 **PowerSet**
-	: ÀÓÀÇÀÇ ÁýÇÕ dayaÀÇ ¸ðµç ºÎºÐÁýÇÕÀ» Ãâ·ÂÇÏ¶ó.
+	: ìž„ì˜ì˜ ì§‘í•© dayaì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì„ ì¶œë ¥í•˜ë¼.
 							0
 							a
 							b
-	data = {a, b, c, d}		c			2^4 = 16°³
+	data = {a, b, c, d}		c			2^4 = 16ê°œ
 							d
 							a b
 							a c
@@ -14,25 +14,25 @@
 							
 **Design Recursion
 	[1]
-	{a, b, c, d, e, f} ÀÇ ¸ðµç ºÎºÐÁýÇÕÀ» ³ª¿­ÇÏ·Á¸é
-		- a¸¦ Á¦¿ÜÇÑ {b, c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕµéÀ» ³ª¿­ÇÏ°í
-		- {b, c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÑ´Ù.
+	{a, b, c, d, e, f} ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì„ ë‚˜ì—´í•˜ë ¤ë©´
+		- aë¥¼ ì œì™¸í•œ {b, c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ê³ 
+		- {b, c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•œë‹¤.
 		
 		
 	[2]
-	{b, c, d, e, f} ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ·Á¸é
-		- {c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕµé¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ°í
-		- {c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a, b}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÑ´Ù.
+	{b, c, d, e, f} ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ë ¤ë©´
+		- {c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ë“¤ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ê³ 
+		- {c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a, b}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•œë‹¤.
 		
 		
 	[3]
-	{c, d, e, f} ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ·Á¸é
-		- {d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕµé¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ°í
-		- {d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a, c}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÑ´Ù.
+	{c, d, e, f} ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ë ¤ë©´
+		- {d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ë“¤ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ê³ 
+		- {d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a, c}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•œë‹¤.
 		
 		
-	[4]							// #»çÁøÂüÁ¶(powerSet_DesignRecursion[4]_error)
-	powerSet(S){					// 1. Mission : SÀÇ ¸èÁýÇÕÀ» Ãâ·ÂÇÏ¶ó
+	[4]							// #ì‚¬ì§„ì°¸ì¡°(powerSet_DesignRecursion[4]_error)
+	powerSet(S){					// 1. Mission : Sì˜ ë©±ì§‘í•©ì„ ì¶œë ¥í•˜ë¼
 		if S is an empty set
 			print nothing;
 		else
@@ -40,49 +40,49 @@
 			find all subsets of S-{t} by calling powerSet(S-{t});
 			print the subsets;
 			print the subsets with adding t;		
-	}									// ÀÌ·¸°Ô ÇÏ·Á¸é powerSet ÇÔ¼ö´Â			
-										// ¿©·¯°³ÀÇ ÁýÇÕµéÀ» return ÇØ¾ßÇÑ´Ù.
-										// ¾î¶»°Ô??
+	}									// ì´ë ‡ê²Œ í•˜ë ¤ë©´ powerSet í•¨ìˆ˜ëŠ”			
+										// ì—¬ëŸ¬ê°œì˜ ì§‘í•©ë“¤ì„ return í•´ì•¼í•œë‹¤.
+										// ì–´ë–»ê²Œ??
 											
 											
-	[5] 						// #»çÁøÂüÁ¶(powerSet_DesignRecursion[5]_ok)
-	powerSet(P, S){					// 2 Mission : SÀÇ ¸èÁýÇÕÀ» ±¸ÇÑ ÈÄ 
-		if S is an empty set		//	 		°¢°¢¿¡ ÁýÇÕ P¸¦ ÇÕÁýÇÕÇÏ¿© Ãâ·ÂÇÏ¶ó	
+	[5] 						// #ì‚¬ì§„ì°¸ì¡°(powerSet_DesignRecursion[5]_ok)
+	powerSet(P, S){					// 2 Mission : Sì˜ ë©±ì§‘í•©ì„ êµ¬í•œ í›„ 
+		if S is an empty set		//	 		ê°ê°ì— ì§‘í•© Pë¥¼ í•©ì§‘í•©í•˜ì—¬ ì¶œë ¥í•˜ë¼	
 			print P;
 		else 
 			let t be the first element of S;
 			powerSet(P, S-{t});
 			powerSet(P U {t}, S-{t});
-	}									// recursion ÇÔ¼ö°¡ µÎ°³ÀÇ ÁýÇÕÀ» ¸Å°³º¯¼ö·Î
-										// ¹Þµµ·Ï ¼³°èÇØ¾ß ÇÑ´Ù´Â ÀÇ¹ÌÀÌ´Ù. µÎ¹øÂ°
-										// ÁýÇÕÀÇ ¸ðµç ºÎºÐÁýÇÕµé¿¡ Ã¹¹øÂ° ÁýÇÕÀ»
-										// ÇÕÁýÇÕÇÏ¿© Ãâ·ÂÇÑ´Ù.
+	}									// recursion í•¨ìˆ˜ê°€ ë‘ê°œì˜ ì§‘í•©ì„ ë§¤ê°œë³€ìˆ˜ë¡œ
+										// ë°›ë„ë¡ ì„¤ê³„í•´ì•¼ í•œë‹¤ëŠ” ì˜ë¯¸ì´ë‹¤. ë‘ë²ˆì§¸
+										// ì§‘í•©ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ë“¤ì— ì²«ë²ˆì§¸ ì§‘í•©ì„
+										// í•©ì§‘í•©í•˜ì—¬ ì¶œë ¥í•œë‹¤.
 										
 	[6]
-	{b, c, d, e, f} ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ·Á¸é
-		- {c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕµé¿¡ {a}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÏ°í
-		- {c, d, e, f}ÀÇ ¸ðµç ºÎºÐÁýÇÕ¿¡ {a, b}¸¦ Ãß°¡ÇÑ ÁýÇÕµéÀ» ³ª¿­ÇÑ´Ù.
+	{b, c, d, e, f} ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ë ¤ë©´
+		- {c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ë“¤ì— {a}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•˜ê³ 
+		- {c, d, e, f}ì˜ ëª¨ë“  ë¶€ë¶„ì§‘í•©ì— {a, b}ë¥¼ ì¶”ê°€í•œ ì§‘í•©ë“¤ì„ ë‚˜ì—´í•œë‹¤.
 		  -----------					 ------
 		  	   |							  |
-			ÁýÇÕS						  	ÁýÇÕP
-			; k¹øÂ°ºÎÅÍ ¸¶Áö¸· ¿ø¼Ò±îÁö		;Ã³À½ºÎÅÍ k-1¹øÂ° ¿ø¼Òµé Áß ÀÏºÎÀÌ´Ù.
-			¿¬¼ÓµÈ ¿ø¼ÒµéÀÌ´Ù.
+			ì§‘í•©S						  	ì§‘í•©P
+			; kë²ˆì§¸ë¶€í„° ë§ˆì§€ë§‰ ì›ì†Œê¹Œì§€		;ì²˜ìŒë¶€í„° k-1ë²ˆì§¸ ì›ì†Œë“¤ ì¤‘ ì¼ë¶€ì´ë‹¤.
+			ì—°ì†ëœ ì›ì†Œë“¤ì´ë‹¤.
 			
 			
 	[7]
-						  ÁýÇÕS
+						  ì§‘í•©S
 						 -------
 			 0 1 2 3 4 5 6 7 8 9
 		data a b c d e f g h i j
 			  	   		 |
-			  	   		 k				// ÁýÇÕ S´Â data[k], ... , data[n-1]ÀÌ°í,
-										// ÁýÇÕ P´Â include[i]=true,		  	   		 
-	 include t f t t f f				//					i=0, ... , k-1ÀÎ ¿ø¼ÒµéÀÌ´Ù.
+			  	   		 k				// ì§‘í•© SëŠ” data[k], ... , data[n-1]ì´ê³ ,
+										// ì§‘í•© PëŠ” include[i]=true,		  	   		 
+	 include t f t t f f				//					i=0, ... , k-1ì¸ ì›ì†Œë“¤ì´ë‹¤.
 	 		 -----------
-	 		 ÁýÇÕP={a,c,d}
+	 		 ì§‘í•©P={a,c,d}
 	 		 
 	 		 
-**»óÅÂ°ø°£Æ®¸® ( state space tree )
+**ìƒíƒœê³µê°„íŠ¸ë¦¬ ( state space tree )
 
 	k=0									{}
 						exclude a		|		include a
@@ -98,9 +98,9 @@
 			|		|		|		|		|		|		|		|
 	k=3		{}		{c}		{b}		{b,c}	{a}		{a,c}	{a,b}	{a,b,c}
 	
-	- ÇØ¸¦ Ã£±â À§ÇØ Å½»öÇÒ ÇÊ¿ä°¡ ÀÖ´Â ¸ðµç ÈÄº¸µéÀ» Æ÷ÇÔÇÏ´Â Æ®¸®
-	- Æ®¸®ÀÇ ¸ðµç ³ëµåµéÀ» ¹æ¹®ÇÏ¸é ÇØ¸¦ Ã£À» ¼ö ÀÖ´Ù.
-	- ·çÆ®¿¡¼­ Ãâ¹ßÇÏ¿© Ã¼°èÀûÀ¸·Î ¸ðµç ³ëµå¸¦ ¹æ¹®ÇÏ´Â ÀýÂ÷¸¦ ±â¼úÇÑ´Ù.
+	- í•´ë¥¼ ì°¾ê¸° ìœ„í•´ íƒìƒ‰í•  í•„ìš”ê°€ ìžˆëŠ” ëª¨ë“  í›„ë³´ë“¤ì„ í¬í•¨í•˜ëŠ” íŠ¸ë¦¬
+	- íŠ¸ë¦¬ì˜ ëª¨ë“  ë…¸ë“œë“¤ì„ ë°©ë¬¸í•˜ë©´ í•´ë¥¼ ì°¾ì„ ìˆ˜ ìžˆë‹¤.
+	- ë£¨íŠ¸ì—ì„œ ì¶œë°œí•˜ì—¬ ì²´ê³„ì ìœ¼ë¡œ ëª¨ë“  ë…¸ë“œë¥¼ ë°©ë¬¸í•˜ëŠ” ì ˆì°¨ë¥¼ ê¸°ìˆ í•œë‹¤.
 	
 	
 	

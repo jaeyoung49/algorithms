@@ -3,31 +3,31 @@ package step4_power_set;
 public class PowerSet {
 	/*
 	 * Mission:
-	 * 		data[k], ... , data[n-1]ÀÇ ¸èÁıÇÕÀ» ±¸ÇÑ ÈÄ °¢°¢¿¡
-	 * 		include[i]=true -> i=0, ... , k-1ÀÎ ¿ø¼Ò¸¦ Ãß°¡ÇÏ¿© Ãâ·ÂÇÏ¶ó.
+	 * 		data[k], ... , data[n-1]ì˜ ë©±ì§‘í•©ì„ êµ¬í•œ í›„ ê°ê°ì—
+	 * 		include[i]=true -> i=0, ... , k-1ì¸ ì›ì†Œë¥¼ ì¶”ê°€í•˜ì—¬ ì¶œë ¥í•˜ë¼.
 	 */
 	private static char data[] = {'a', 'b', 'c'};
 	private static int n = data.length;
 	private static boolean[] include = new boolean[n];		
-												// include, int k´Â
-	public static void powerSet(int k){			// Æ®¸®»ó¿¡¼­ ÇöÀç ³ªÀÇ À§Ä¡¸¦ Ç¥ÇöÇÑ´Ù
-		if(k==n){	// ¸¸¾à ³» À§Ä¡°¡ ¸®ÇÁ³ëµå¶ó¸é								
+												// include, int këŠ”
+	public static void powerSet(int k){			// íŠ¸ë¦¬ìƒì—ì„œ í˜„ì¬ ë‚˜ì˜ ìœ„ì¹˜ë¥¼ í‘œí˜„í•œë‹¤
+		if(k==n){	// ë§Œì•½ ë‚´ ìœ„ì¹˜ê°€ ë¦¬í”„ë…¸ë“œë¼ë©´								
 			for(int i=0; i<n; i++)
 				if(include[i])
 					System.out.print(data[i] + " ");
 			System.out.println();
 			return;
 		}					
-		include[k]=false;	// ¸ÕÀú ¿ŞÂÊÀ¸·Î ³»·Á°¬´Ù°¡
+		include[k]=false;	// ë¨¼ì € ì™¼ìª½ìœ¼ë¡œ ë‚´ë ¤ê°”ë‹¤ê°€
 		powerSet(k+1);	
-		include[k]=true;	// ÀÌ¹ø¿£ ¿À¸¥ÂÊÀ¸·Î ³»·Á°£´Ù.
+		include[k]=true;	// ì´ë²ˆì—” ì˜¤ë¥¸ìª½ìœ¼ë¡œ ë‚´ë ¤ê°„ë‹¤.
 		powerSet(k+1);
 	}
 	
 	public static void main(String[] args) {
 		/*
-		 * Ã³À½ ÀÌ ÇÔ¼ö¸¦ È£ÃâÇÒ ¶§´Â powerSet(0)·Î È£ÃâÇÑ´Ù.
-		 * Áï P´Â °øÁıÇÕÀÌ°í S´Â ÀüÃ¼ÁıÇÕÀÌ´Ù.
+		 * ì²˜ìŒ ì´ í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•  ë•ŒëŠ” powerSet(0)ë¡œ í˜¸ì¶œí•œë‹¤.
+		 * ì¦‰ PëŠ” ê³µì§‘í•©ì´ê³  SëŠ” ì „ì²´ì§‘í•©ì´ë‹¤.
 		 */
 		PowerSet.powerSet(0);	
 	}

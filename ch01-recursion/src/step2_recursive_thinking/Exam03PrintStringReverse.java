@@ -6,7 +6,7 @@ public class Exam03PrintStringReverse {
 		printCharsReverse("ShowMeTheMoney");
 	}
 	/**
-	 * 3. ¹®ÀÚ¿­À» ¿ª¼øÀ¸·Î º¯È¯ÇÏ¿© Ãâ·Â
+	 * 3. ë¬¸ìì—´ì„ ì—­ìˆœìœ¼ë¡œ ë³€í™˜í•˜ì—¬ ì¶œë ¥
 	 * @param str
 	 */
 	public static void printCharsReverse(String str){

@@ -7,8 +7,8 @@ public class Exam02SequentialSearch2 {
 	}
 	
 	/*	
-	 * 	1-2. ¸í½ÃÀû ¸Å°³º¯¼ö : ¼øÂ÷Å½»ö
-	 * 		1-2-2. n-1ºÎÅÍ 0ÀÇ ¼øÀ¸·Î Å½»ö
+	 * 	1-2. ëª…ì‹œì  ë§¤ê°œë³€ìˆ˜ : ìˆœì°¨íƒìƒ‰
+	 * 		1-2-2. n-1ë¶€í„° 0ì˜ ìˆœìœ¼ë¡œ íƒìƒ‰
 	 */
 	public static int search(int[] data, int begin, int end, int target){
 		if(begin>end)

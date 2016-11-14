@@ -13,7 +13,7 @@ public class Exam01SelectionSort {
 	
 	public static void selectionSort (int[] A){
 		for(int i=0; i<A.length; i++){
-			// 1. maxNum √£±‚
+			// 1. maxNum Ï∞æÍ∏∞
 			int maxNum = 0;
 			int index = 0;
 			for(int j=0; j<A.length-i; j++){
@@ -22,7 +22,7 @@ public class Exam01SelectionSort {
 					index = j;
 				}
 			}
-			// 2. A[j] <-> A[last] ±≥»Ø
+			// 2. A[j] <-> A[last] ÍµêÌôò
 			A[index] = A[A.length-1-i]; 
 			A[A.length-1-i] = maxNum;
 		}
@@ -46,8 +46,8 @@ public class Exam01SelectionSort {
 			boolean flag = true;
 			int count = 0;
 			while(flag){
-				if(i-count<0 || A[i-count]<temp){	// or ≥Ì∏Æø¨ªÍ¿⁄"|"¿Ã∏È ∏µÁ ∞™¿ª √º≈©
-					A[i-count+1] = temp;			// "||"¿Ã∏È ¬¸¿Ã ≥™ø√∞ÊøÏ ¡∂∞«πÆ ø¨ªÍ¿ª ¡ﬂ¥‹
+				if(i-count<0 || A[i-count]<temp){	// or ÎÖºÎ¶¨Ïó∞ÏÇ∞Ïûê"|"Ïù¥Î©¥ Î™®Îì† Í∞íÏùÑ Ï≤¥ÌÅ¨
+					A[i-count+1] = temp;			// "||"Ïù¥Î©¥ Ï∞∏Ïù¥ ÎÇòÏò¨Í≤ΩÏö∞ Ï°∞Í±¥Î¨∏ Ïó∞ÏÇ∞ÏùÑ Ï§ëÎã®
 					count = 0;
 					flag=false;
 				} else {

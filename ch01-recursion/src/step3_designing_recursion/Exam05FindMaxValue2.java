@@ -6,7 +6,7 @@ public class Exam05FindMaxValue2 {
 
 	}
 	/*
-	 * 	2-2. �ִ밪 ã��2
+	 * 	2-2. 최대값 찾기: 다른 버전
 	 */
 	public static int findMax(int[] data, int begin, int end){
 		if(begin==end)

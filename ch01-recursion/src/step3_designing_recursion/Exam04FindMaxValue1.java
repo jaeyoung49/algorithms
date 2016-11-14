@@ -6,7 +6,7 @@ public class Exam04FindMaxValue1 {
 
 	}
 	/*
-	 * 	2-1. �ִ밪 ã��1
+	 * 	2-1. 매개변수의 명시화: 최대값 찾기
 	 */
 	public static int findMax(int[] data, int begin, int end){
 		if(begin==end)

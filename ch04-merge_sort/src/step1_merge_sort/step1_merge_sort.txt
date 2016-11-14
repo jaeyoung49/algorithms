@@ -1,22 +1,22 @@
-**Multi Sort ( ºÐÇÒÁ¤º¹¹ý )**
+**Multi Sort ( ë¶„í• ì •ë³µë²• )**
 	: Divide and Conquer
 	
-	[1] Á¤ÀÇ
-		- ºÐÇÒ : ÇØ°áÇÏ°íÀÚ ÇÏ´Â ¹®Á¦¸¦ ÀÛÀº Å©±âÀÇ µ¿ÀÏÇÑ ¹®Á¦µé·Î ºÐÇÒ
-		- Á¤º¹ : °¢°¢ÀÇ ÀÛÀº ¹®Á¦¸¦ ¼øÈ¯ÀûÀ¸·Î ÇØ°á
-		- ÇÕº´ : ÀÛÀº ¹®Á¦ÀÇ ÇØ¸¦ ÇÕÇÏ¿©(Merge) ¿ø·¡ ¹®Á¦¿¡ ´ëÇÑ ÇØ¸¦ ±¸ÇÔ
+	[1] ì •ì˜
+		- ë¶„í•  : í•´ê²°í•˜ê³ ìž í•˜ëŠ” ë¬¸ì œë¥¼ ìž‘ì€ í¬ê¸°ì˜ ë™ì¼í•œ ë¬¸ì œë“¤ë¡œ ë¶„í• 
+		- ì •ë³µ : ê°ê°ì˜ ìž‘ì€ ë¬¸ì œë¥¼ ìˆœí™˜ì ìœ¼ë¡œ í•´ê²°
+		- í•©ë³‘ : ìž‘ì€ ë¬¸ì œì˜ í•´ë¥¼ í•©í•˜ì—¬(Merge) ì›ëž˜ ë¬¸ì œì— ëŒ€í•œ í•´ë¥¼ êµ¬í•¨
 	
-	[2] Á¾·ù
+	[2] ì¢…ë¥˜
 		- Merge Sort
 		- Quick Sort
 		- Heap Sort
 		
 	
-**Merge Sort ( ÇÕº´Á¤·Ä )**
-	[1] 		// #»çÁøÂüÁ¶(MergeSort1)
-		- µ¥ÀÌÅÍ°¡ ÀúÀåµÈ ¹è¿­À» Àý¹ÝÀ¸·Î ³ª´®
-		- °¢°¢À» ¼øÈ¯ÀûÀ¸·Î Á¤·Ä
-		- Á¤·ÄµÈ µÎ °³ÀÇ ¹è¿­À» ÇÕÃÄ ÀüÃ¼¸¦ Á¤·Ä
+**Merge Sort ( í•©ë³‘ì •ë ¬ )**
+	[1] 		// #ì‚¬ì§„ì°¸ì¡°(MergeSort1)
+		- ë°ì´í„°ê°€ ì €ìž¥ëœ ë°°ì—´ì„ ì ˆë°˜ìœ¼ë¡œ ë‚˜ëˆ”
+		- ê°ê°ì„ ìˆœí™˜ì ìœ¼ë¡œ ì •ë ¬
+		- ì •ë ¬ëœ ë‘ ê°œì˜ ë°°ì—´ì„ í•©ì³ ì „ì²´ë¥¼ ì •ë ¬
 		
 					A	L	G	O	R	I	T	H	M	S
 			
@@ -30,45 +30,45 @@
 		(1)
 			i--------A[i] vs. A[j]----------j
 			|								|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					_	_	_	_	_	_	_	_	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					_	_	_	_	_	_	_	_	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 					|
 					k
 			
 		(2)
 				i--------A[i] vs. A[j]------j
 				|							|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	_	_	_	_	_	_	_	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	_	_	_	_	_	_	_	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 						|
 						k	
 		
 		(3)
 					i-----A[i] vs. A[j]-----j
 					|						|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	G	_	_	_	_	_	_	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	G	_	_	_	_	_	_	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 							|
 							k
 							
 		(4)
 					i-------A[i] vs. A[j]-------j
 					|							|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	G	H	_	_	_	_	_	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	G	H	_	_	_	_	_	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 								|
 								k
 								
 		(5)
 					i---------A[i] vs. A[j]---------j
 					|								|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	G	H	I	_	_	_	_	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	G	H	I	_	_	_	_	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 									|
 									k
 		
@@ -77,37 +77,37 @@
 		(10)
 								i-----A[i] vs. A[j]-----j
 								|						|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	G	H	I	L	M	O	R	_	_	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	G	H	I	L	M	O	R	_	_	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 													|
 													k
 													
 		(11)
 								i---------A[i] vs. A[j]---------j
 								|								|
-			A	G	L	O	R				H	I	M	S	T	-- Á¤·ÄµÈ µÎ ¹è¿­
+			A	G	L	O	R				H	I	M	S	T	-- ì •ë ¬ëœ ë‘ ë°°ì—´
 			
-					A	G	H	I	L	M	O	R	S	T	-- Ãß°¡¹è¿­ ÀÌ¿ë
+					A	G	H	I	L	M	O	R	S	T	-- ì¶”ê°€ë°°ì—´ ì´ìš©
 															|
-															k	// S, T´Â ÇÑ¹ø¿¡ ÁÖÀÔ
+															k	// S, TëŠ” í•œë²ˆì— ì£¼ìž…
 															
 	[3] Design Sort
-		mergeSort(A[], p, r) {		// A[p, ... , r] À» Á¤·ÄÇÑ´Ù
+		mergeSort(A[], p, r) {		// A[p, ... , r] ì„ ì •ë ¬í•œë‹¤
 			if( p < r ) then {
-				q <- (p+q)/2;		---------------- 1)	p,qÀÇ Áß°£ ÁöÁ¡ °è»ê
-				mergeSort(A, p, q);		------------ 2) Àü¹ÝºÎ Á¤·Ä
-				mergeSort(A, q+1, r);	------------ 3) ÈÄ¹ÝºÎ Á¤·Ä
-				merge(A, p, q, r);	---------------- 4) ÇÕº´
+				q <- (p+q)/2;		---------------- 1)	p,qì˜ ì¤‘ê°„ ì§€ì  ê³„ì‚°
+				mergeSort(A, p, q);		------------ 2) ì „ë°˜ë¶€ ì •ë ¬
+				mergeSort(A, q+1, r);	------------ 3) í›„ë°˜ë¶€ ì •ë ¬
+				merge(A, p, q, r);	---------------- 4) í•©ë³‘
 			}
 		}
 		
 		Merge(A[], p, q, r) {
-			Á¤·ÄµÇ¾î ÀÖ´Â µÎ ¹è¿­ A[p, ... , q] ¿Í A[q+1, ... , r]À» ÇÕÇÏ¿©
-			Á¤·ÄµÈ ÇÏ³ªÀÇ ¹è¿­ A[p, ... , r]À» ¸¸µç´Ù.
+			ì •ë ¬ë˜ì–´ ìžˆëŠ” ë‘ ë°°ì—´ A[p, ... , q] ì™€ A[q+1, ... , r]ì„ í•©í•˜ì—¬
+			ì •ë ¬ëœ í•˜ë‚˜ì˜ ë°°ì—´ A[p, ... , r]ì„ ë§Œë“ ë‹¤.
 		}
 		
-	[4] ½Ã°£º¹Àâµµ
+	[4] ì‹œê°„ë³µìž¡ë„
 				-- 0						--- if n = 1
 		T(n) = -|
 				-- T(n/2) + T(n/2) + n		--- otherwise

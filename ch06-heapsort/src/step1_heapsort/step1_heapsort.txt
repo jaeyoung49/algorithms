@@ -1,29 +1,29 @@
 **Heapsort**
 	
-	[1] Æ¯Â¡
-		- ÃÖ¾ÇÀÇ °æ¿ì ½Ã°£º¹Àâµµ : O(n*log 2 n)
-		- Sorts in place - Ãß°¡ ¹è¿­ ºÒÇÊ¿ä
-		- ÀÌÁø Èü(binary heap) ÀÚ·á±¸Á¶¸¦ »ç¿ë
+	[1] íŠ¹ì§•
+		- ìµœì•…ì˜ ê²½ìš° ì‹œê°„ë³µì¡ë„ : O(n*log 2 n)
+		- Sorts in place - ì¶”ê°€ ë°°ì—´ ë¶ˆí•„ìš”
+		- ì´ì§„ í™(binary heap) ìë£Œêµ¬ì¡°ë¥¼ ì‚¬ìš©
 	
 		
-	[2] HeapÀÇ Á¤ÀÇ	// »çÁøÂüÁ¶(heapsort-1_definition.jpg)
-		- complete binary tree ÀÌ¸é¼­	// »çÁøÂüÁ¶(heapsort-2_full or complete binary heap.jpg)
-		- heap property ¸¦ ¸¸Á·ÇØ¾ßÇÑ´Ù
+	[2] Heapì˜ ì •ì˜	// ì‚¬ì§„ì°¸ì¡°(heapsort-1_definition.jpg)
+		- complete binary tree ì´ë©´ì„œ	// ì‚¬ì§„ì°¸ì¡°(heapsort-2_full or complete binary heap.jpg)
+		- heap property ë¥¼ ë§Œì¡±í•´ì•¼í•œë‹¤
 		
-			ex) »çÁøÂüÁ¶ : heapsort-3_example.jpg
+			ex) ì‚¬ì§„ì°¸ì¡° : heapsort-3_example.jpg
 			
-		- µ¿ÀÏÇÑ µ¥ÀÌÅÍ¸¦ °¡Áø ¼­·Î ´Ù¸¥ Èü
-			Áï, ÈüÀº À¯ÀÏÇÏÁö ¾ÊÀ½		// »çÁøÂüÁ¶ : heapsort-4_example1.jpg
+		- ë™ì¼í•œ ë°ì´í„°ë¥¼ ê°€ì§„ ì„œë¡œ ë‹¤ë¥¸ í™
+			ì¦‰, í™ì€ ìœ ì¼í•˜ì§€ ì•ŠìŒ		// ì‚¬ì§„ì°¸ì¡° : heapsort-4_example1.jpg
 	
 			
-	[3] HeapÀÇ Ç¥Çö
-		- ÈüÀº ÀÏÂ÷¿ø ¹è¿­·Î Ç¥Çö°¡´É : A[1 ... n]
-			- ·çÆ® ³ëµå A[1]
-			- A[i]ÀÇ ºÎ¸ğ = A[i/2]
-			- A[i]ÀÇ ¿ŞÂÊ ÀÚ½Ä = A[2i]
-			- A[i]ÀÇ ¿À¸¥ÂÊ ÀÚ½Ä = A[2i+1]
+	[3] Heapì˜ í‘œí˜„
+		- í™ì€ ì¼ì°¨ì› ë°°ì—´ë¡œ í‘œí˜„ê°€ëŠ¥ : A[1 ... n]
+			- ë£¨íŠ¸ ë…¸ë“œ A[1]
+			- A[i]ì˜ ë¶€ëª¨ = A[i/2]
+			- A[i]ì˜ ì™¼ìª½ ìì‹ = A[2i]
+			- A[i]ì˜ ì˜¤ë¥¸ìª½ ìì‹ = A[2i+1]
 			
-			(Èü) ---> complete binary ¿©¾ßÇÑ´Ù
+			(í™) ---> complete binary ì—¬ì•¼í•œë‹¤
 									1'	16
 						---------------------------------
 						|								|
@@ -36,16 +36,16 @@
 			8'		9'		10'	
 			2		4		1
 			
-			(¹è¿­)
+			(ë°°ì—´)
 				index :		1'	2'	3'	4'	5'	6'	7'	8'	9'	10'
 				value :		16	14	10	8	7	9	3	2	4	1
 				
 				
-	[4] ±âº»¿¬»ê : MAX-HEAPIFY
-		- ÀüÃ¼¸¦ ÈüÀ¸·Î ¸¸µé¾î¶ó!! 		// »çÁøÂüÁ¶ : heapsort-5_MAX-HEAPIFY.jpg
+	[4] ê¸°ë³¸ì—°ì‚° : MAX-HEAPIFY
+		- ì „ì²´ë¥¼ í™ìœ¼ë¡œ ë§Œë“¤ì–´ë¼!! 		// ì‚¬ì§„ì°¸ì¡° : heapsort-5_MAX-HEAPIFY.jpg
 		
-		- ¿¬»ê°úÁ¤
-					// »çÁøÂüÁ¶ : heapsort-6_MAX-HEAPIFY_progress1~3.jpg
+		- ì—°ì‚°ê³¼ì •
+					// ì‚¬ì§„ì°¸ì¡° : heapsort-6_MAX-HEAPIFY_progress1~3.jpg
 					
 					
 	[5] MAX-HEAPIFY
@@ -63,15 +63,15 @@
 
 		(1) recursive version
 	
-			MAX-HEAPIFY(int[] A, int i) {			// 1) ³ëµå i¸¦ root·Î ÇÏ´Â
-				if there is no child of A[i]		//	¼­ºêÆ®¸®¸¦ heapifyÇÑ´Ù.
+			MAX-HEAPIFY(int[] A, int i) {			// 1) ë…¸ë“œ ië¥¼ rootë¡œ í•˜ëŠ”
+				if there is no child of A[i]		//	ì„œë¸ŒíŠ¸ë¦¬ë¥¼ heapifyí•œë‹¤.
 					return;
 				k <- index of the biggest child of i;
 				if A[i] >= A[k]
 					return;
 				exchange A[i] and A[k];
-				MAX-HEAPIFY(A, k);					// 2) root ³ëµå¿¡ ´ëÇÑ heapify´Â
-			}										//	MAX-HEAPIFY(1)À» È£ÃâÇÏ¸é µÊ
+				MAX-HEAPIFY(A, k);					// 2) root ë…¸ë“œì— ëŒ€í•œ heapifyëŠ”
+			}										//	MAX-HEAPIFY(1)ì„ í˜¸ì¶œí•˜ë©´ ë¨
 		
 		
 		(2) iterative version
@@ -127,26 +127,26 @@
 				8'		9'		10'	
 				2		4		1		
 					
-	[6] Á¤·ÄÇÒ ¹è¿­À» ÈüÀ¸·Î ¸¸µé±â
+	[6] ì •ë ¬í•  ë°°ì—´ì„ í™ìœ¼ë¡œ ë§Œë“¤ê¸°
 		
 		(1) Build-Max-Heap(A)
 			1 heap-size[a] <- length[A]
 			2 for i <- length[A]/2 downto 1
 			3 		do Max-Heapify(A, i)			
 	
-		(2) ½Ã°£º¹Àâµµ
+		(2) ì‹œê°„ë³µì¡ë„
 			: O(n)		
 					
-		(3) ¼ø¼­
-			(a) ÁÖ¾îÁø µ¥ÀÌÅÍ·Î ÈüÀ» ¸¸µç´Ù.
-			(b) Èü¿¡¼­ ÃÖ´ë°ª(·çÆ®)À» °¡Àå ¸¶Áö¸· °ª°ú ¹Ù²Û´Ù.
-			(c) ÈüÀÇ Å©±â°¡ 1 ÁÙ¾îµç °ÍÀ¸·Î °£ÁÖÇÑ´Ù. 
-				Áï, °¡Àå ¸¶Áö¸· °ªÀº ÈüÀÇ ÀÏºÎ°¡ ¾Æ´Ñ °ÍÀ¸·Î °£ÁÖÇÑ´Ù.
-			(d) ·çÆ®³ëµå¿¡ ´ëÇØ¼­ HEAPIFY(1)ÇÑ´Ù.
-			(e) 2~4¹øÀ» ¹İº¹ÇÑ´Ù.
+		(3) ìˆœì„œ
+			(a) ì£¼ì–´ì§„ ë°ì´í„°ë¡œ í™ì„ ë§Œë“ ë‹¤.
+			(b) í™ì—ì„œ ìµœëŒ€ê°’(ë£¨íŠ¸)ì„ ê°€ì¥ ë§ˆì§€ë§‰ ê°’ê³¼ ë°”ê¾¼ë‹¤.
+			(c) í™ì˜ í¬ê¸°ê°€ 1 ì¤„ì–´ë“  ê²ƒìœ¼ë¡œ ê°„ì£¼í•œë‹¤. 
+				ì¦‰, ê°€ì¥ ë§ˆì§€ë§‰ ê°’ì€ í™ì˜ ì¼ë¶€ê°€ ì•„ë‹Œ ê²ƒìœ¼ë¡œ ê°„ì£¼í•œë‹¤.
+			(d) ë£¨íŠ¸ë…¸ë“œì— ëŒ€í•´ì„œ HEAPIFY(1)í•œë‹¤.
+			(e) 2~4ë²ˆì„ ë°˜ë³µí•œë‹¤.
 					
 					
-	[7] Heapsort¿Í ½Ã°£º¹Àâµµ
+	[7] Heapsortì™€ ì‹œê°„ë³µì¡ë„
 		
 		Heapsort(A)
 		1 Build-Max-Heap(A)					: O(n)

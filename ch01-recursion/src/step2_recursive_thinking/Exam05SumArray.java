@@ -7,10 +7,7 @@ public class Exam05SumArray {
 		System.out.println(sum(3, data));
 	}
 	/**
-	 * 5. ¹è¿­ÀÇ ÇÕ ±¸ÇÏ±â
-	 * @param n
-	 * @param data
-	 * @return
+	 * 5. ë°°ì—´ì˜ í•© êµ¬í•˜ê¸°
 	 */
 	public static int sum(int n, int[] data){
 		if(n<=0)
