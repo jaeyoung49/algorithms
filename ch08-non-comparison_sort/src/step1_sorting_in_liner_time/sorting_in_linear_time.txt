@@ -1,19 +1,19 @@
-**¼±Çü½Ã°£ Á¤·Ä ¾Ë°í¸®Áò ( sorting in linear time ) **
-	: Non-comparison sort + ½Ã°£º¹Àâµµ O(n)
-		<------> comparison sort + ½Ã°£º¹Àâµµ O(n* log n)
+**ì„ í˜•ì‹œê°„ ì •ë ¬ ì•Œê³ ë¦¬ì¦˜ ( sorting in linear time ) **
+	: Non-comparison sort + ì‹œê°„ë³µìž¡ë„ O(n)
+		<------> comparison sort + ì‹œê°„ë³µìž¡ë„ O(n* log n)
 
 	[1] Counting Sort		
-		- n°³ÀÇ Á¤¼ö¸¦ Á¤·ÄÇÏ¶ó. ´Ü ¸ðµç Á¤¼ö´Â 0¿¡¼­ k»çÀÌÀÇ Á¤¼öÀÌ´Ù.
-			ex) n¸íÀÇ ÇÐ»ýµéÀÇ ½ÃÇèÁ¡¼ö¸¦ Á¤·ÄÇÏ¶ó. 
-				´Ü ¸ðµç Á¡¼ö´Â 100ÀÌÇÏÀÇ ¾çÀÇ Á¤¼öÀÌ´Ù.
+		- nê°œì˜ ì •ìˆ˜ë¥¼ ì •ë ¬í•˜ë¼. ë‹¨ ëª¨ë“  ì •ìˆ˜ëŠ” 0ì—ì„œ kì‚¬ì´ì˜ ì •ìˆ˜ì´ë‹¤.
+			ex) nëª…ì˜ í•™ìƒë“¤ì˜ ì‹œí—˜ì ìˆ˜ë¥¼ ì •ë ¬í•˜ë¼. 
+				ë‹¨ ëª¨ë“  ì ìˆ˜ëŠ” 100ì´í•˜ì˜ ì–‘ì˜ ì •ìˆ˜ì´ë‹¤.
 			
-		- k=5ÀÎ °æ¿ìÀÇ ¿¹	// »çÁøÂüÁ¶(SortingInLinearTime-1_Basic.jpg)
+		- k=5ì¸ ê²½ìš°ì˜ ì˜ˆ	// ì‚¬ì§„ì°¸ì¡°(SortingInLinearTime-1_Basic.jpg)
 			
 						1	2	3	4	5	6	7	8
 					A	2	5	3	0	2	3	0	3
 					
 						0	1	2	3	4	5
-			C(Counter)	2	0	2	3	0	1	----- ±æÀÌ kÀÎ ¹è¿­¿¡ °¢ Á¤¼öÀÇ °³¼ö¸¦ countÇÑ´Ù
+			C(Counter)	2	0	2	3	0	1	----- ê¸¸ì´ kì¸ ë°°ì—´ì— ê° ì •ìˆ˜ì˜ ê°œìˆ˜ë¥¼ countí•œë‹¤
 			
 									
 				result	0	0	2	2	3	3	3	5
@@ -27,11 +27,11 @@
 					A[s++] = j;
 				}
 			}							=======> Is it okay?
-												--> No. ´ëºÎºÐÀÇ °æ¿ì Á¤·ÄÇÒ key °ªµéÀº 
-													·¹ÄÚµåÀÇ ÀÏºÎºÐÀÌ±â ¶§¹®
+												--> No. ëŒ€ë¶€ë¶„ì˜ ê²½ìš° ì •ë ¬í•  key ê°’ë“¤ì€ 
+													ë ˆì½”ë“œì˜ ì¼ë¶€ë¶„ì´ê¸° ë•Œë¬¸
 													
-	[2] // »çÁøÂüÁ¶(SortingInLinearTime-2_Logic.jpg)
-		1) ±âÁ¸ÀÇ °³¼ö¸¦ ±¸ÇÑ´Ù
+	[2] // ì‚¬ì§„ì°¸ì¡°(SortingInLinearTime-2_Logic.jpg)
+		1) ê¸°ì¡´ì˜ ê°œìˆ˜ë¥¼ êµ¬í•œë‹¤
 		
 						1	2	3	4	5	6	7	8
 					A	2	5	3	0	2	3	0	3
@@ -40,50 +40,50 @@
 			C(Counter)	2	0	2	3	0	1
 		
 		
-		2) counterÀÇ ´©ÀûÇÕÀ» ±¸ÇÑ´Ù
+		2) counterì˜ ëˆ„ì í•©ì„ êµ¬í•œë‹¤
 		
 						0	1	2	3	4	5
-			C(Counter)	2	2	4	7	7	8	----- 0~5±îÁö ´©ÀûÇÕÀ» ±¸ÇÑ´Ù
-												----- kº¸´Ù ÀÛ°Å³ª °°Àº °ªÀº?			
+			C(Counter)	2	2	4	7	7	8	----- 0~5ê¹Œì§€ ëˆ„ì í•©ì„ êµ¬í•œë‹¤
+												----- kë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ì€ ê°’ì€?			
 			
-		3) »õ·Î¿î ¹è¿­ B¿¡ 3À» ³Ö´Â´Ù
+		3) ìƒˆë¡œìš´ ë°°ì—´ Bì— 3ì„ ë„£ëŠ”ë‹¤
 		 
 						1	2	3	4	5	6	7	8
 					B	_	_	_	_	_	_	3	_
 												|
-												7¹øÂ° ÀÚ¸®¿¡´Â ¹Ýµå½Ã 3Àº µé¾î°¡¾ß ÇÑ´Ù
+												7ë²ˆì§¸ ìžë¦¬ì—ëŠ” ë°˜ë“œì‹œ 3ì€ ë“¤ì–´ê°€ì•¼ í•œë‹¤
 						0	1	2	3	4	5
 			C(Counter)	2	2	4	6	7	8
 									|
-									¸¸¾à¿¡ ÀÔ·Â¿¡¼­ 3ÀÌ ¶Ç ³ª¿Â´Ù¸é 6¹øÂ° À§Ä¡·Î ÇÏ°Ú´Ù´Â ÀÇ¹Ì
+									ë§Œì•½ì— ìž…ë ¥ì—ì„œ 3ì´ ë˜ ë‚˜ì˜¨ë‹¤ë©´ 6ë²ˆì§¸ ìœ„ì¹˜ë¡œ í•˜ê² ë‹¤ëŠ” ì˜ë¯¸
 		
 									
-		4) B¿¡ 0À» ³Ö´Â´Ù
+		4) Bì— 0ì„ ë„£ëŠ”ë‹¤
 		
 						1	2	3	4	5	6	7	8
 					B	_	0	_	_	_	_	3	_
 							|
-							2¹øÂ° ÀÚ¸®¿¡´Â ¹Ýµå½Ã 0Àº µé¾î°¡¾ß ÇÑ´Ù
+							2ë²ˆì§¸ ìžë¦¬ì—ëŠ” ë°˜ë“œì‹œ 0ì€ ë“¤ì–´ê°€ì•¼ í•œë‹¤
 							
 						0	1	2	3	4	5
 			C(Counter)	1	2	4	6	7	8
 						|
-						´ÙÀ½ 0¹øÀÌ ³ª¿À¸é ÀÔ·ÂµÇ¾ßÇÒ À§Ä¡
+						ë‹¤ìŒ 0ë²ˆì´ ë‚˜ì˜¤ë©´ ìž…ë ¥ë˜ì•¼í•  ìœ„ì¹˜
 						
 						
-		5) B¿¡ 3À» ´Ù½Ã ³Ö´Â °æ¿ì
+		5) Bì— 3ì„ ë‹¤ì‹œ ë„£ëŠ” ê²½ìš°
 		
 						1	2	3	4	5	6	7	8
 					B	_	0	_	_	_	3	3	_
 							|
-							2¹øÂ° ÀÚ¸®¿¡´Â ¹Ýµå½Ã 0Àº µé¾î°¡¾ß ÇÑ´Ù
+							2ë²ˆì§¸ ìžë¦¬ì—ëŠ” ë°˜ë“œì‹œ 0ì€ ë“¤ì–´ê°€ì•¼ í•œë‹¤
 							
 						0	1	2	3	4	5
 			C(Counter)	1	2	4	5	7	8
 									|
-									´ÙÀ½ 0¹øÀÌ ³ª¿À¸é ÀÔ·ÂµÇ¾ßÇÒ À§Ä¡
+									ë‹¤ìŒ 0ë²ˆì´ ë‚˜ì˜¤ë©´ ìž…ë ¥ë˜ì•¼í•  ìœ„ì¹˜
 									
-		6) °á°ú
+		6) ê²°ê³¼
 		
 						1	2	3	4	5	6	7	8
 					B	0	0	2	2	3	3	3	5
@@ -92,35 +92,35 @@
 			C(Counter)	1	2	4	5	7	8
 			
 	
-	[3] Design Counting-Sort(A, B, k)		// »çÁøÂüÁ¶ (SortingInLinearTime-3_DesignSort.jpg)
+	[3] Design Counting-Sort(A, B, k)		// ì‚¬ì§„ì°¸ì¡° (SortingInLinearTime-3_DesignSort.jpg)
 		
 		for i <- 0 to k
 			do C[i] <- 0
 		for j <- 1 to length[A]
 			do C[A[j]] <- C[A[j]] + 1	// C[i] now contains the number of elements equal to i
-										// k°ªÀÇ °³¼ö
+										// kê°’ì˜ ê°œìˆ˜
 		for i <- 1 to k
 			do C[i] <- C[i] + C[i-1]	// C[i] now contains the number of elements less than or equal to i
-										// ´©ÀûÇÕ
+										// ëˆ„ì í•©
 		for j <- length[A] downto 1
 			do B[C[A[j]]] <- A[j]
 			   C[A[j]] <- C[A[j]] - 1
 		
 				
-	[4] ½Ã°£º¹Àâµµ
-		- ¼¼Å¸(n+k), ¶Ç´Â ¼¼Å¸(n) if k=0(n).
-		- k°¡ Å¬ °æ¿ì ºñ½Ç¿ëÀû
-		- stable Á¤·Ä ¾Ë°í¸®Áò
-			: ÀÔ·Â¿¡ µ¿ÀÏÇÑ °ªÀÌ ÀÖÀ»¶§ ÀÔ·Â¿¡ ¸ÕÀú ³ª¿À´Â °ªÀÌ Ãâ·Â¿¡¼­µµ ¸ÕÀú ³ª¿Â´Ù
-				-> counting stableÇÏ´Ù
+	[4] ì‹œê°„ë³µìž¡ë„
+		- ì„¸íƒ€(n+k), ë˜ëŠ” ì„¸íƒ€(n) if k=0(n).
+		- kê°€ í´ ê²½ìš° ë¹„ì‹¤ìš©ì 
+		- stable ì •ë ¬ ì•Œê³ ë¦¬ì¦˜
+			: ìž…ë ¥ì— ë™ì¼í•œ ê°’ì´ ìžˆì„ë•Œ ìž…ë ¥ì— ë¨¼ì € ë‚˜ì˜¤ëŠ” ê°’ì´ ì¶œë ¥ì—ì„œë„ ë¨¼ì € ë‚˜ì˜¨ë‹¤
+				-> counting stableí•˜ë‹¤
 		
 		***stable?
-			: ¹è¿­ A¿¡¼­ ¹è¿­ B·Î ¿Å°ÜÁú¶§
-				µ¿ÀÏÇÑ value¸¦ °¡Áø °Í³¢¸®ÀÇ ¼ø¼­´Â µÚ ¼¯ÀÌÁö ¾Ê°í
-				¼ø¼­´ë·Î Á¤·ÄÀÌ µÇ´Â ÇüÅÂ
+			: ë°°ì—´ Aì—ì„œ ë°°ì—´ Bë¡œ ì˜®ê²¨ì§ˆë•Œ
+				ë™ì¼í•œ valueë¥¼ ê°€ì§„ ê²ƒë¼ë¦¬ì˜ ìˆœì„œëŠ” ë’¤ ì„žì´ì§€ ì•Šê³ 
+				ìˆœì„œëŒ€ë¡œ ì •ë ¬ì´ ë˜ëŠ” í˜•íƒœ
 				
 			ex) 			_____	_____	_________	_
-				A-index		4	7	1	5	3	6	8	2 ---- A indexÀÇ ¼ø¼­¸¦ ¸Á°¡¶ß¸®Áö ¾ÊÀ½
+				A-index		4	7	1	5	3	6	8	2 ---- A indexì˜ ìˆœì„œë¥¼ ë§ê°€ëœ¨ë¦¬ì§€ ì•ŠìŒ
 				
 				B-index		1	2	3	4	5	6	7	8
 				B-value		0	0	2	2	3	3	3	5
