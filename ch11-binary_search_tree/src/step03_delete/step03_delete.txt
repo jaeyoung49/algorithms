@@ -1,0 +1,56 @@
+**Binary Search Tree**
+
+	[1] Delete
+		
+		1) Cases
+			- Case 1 : 자식노드가 없는 경우
+			- Case 2 : 자식노드가 1개인 경우
+			- Case 3 : 자식노드가 2개인 경우
+			
+		2) Design
+		
+			Tree-Delete(T, z)
+				// 삭제할 위치 판단
+				if left[z] == null or right[z] == null
+					then y <- z							// y는 최종 삭제할 노드
+				else 
+					y <- Tree-Successor(z)
+					
+				// y의 자식노드가 왼쪽인지 오른쪽인지 확인
+				if left[y] != null
+					then x <- left[y]
+				else
+					x <- right[y]
+					
+				// parent[x]의 위치값을 parent[y]의 위치값으로 바꿔줌
+				if x != null
+					then p[x] <- p[y]
+				
+				// y가 root면 x를 루트로 위치값을 바꿔줌
+				// y가 parent의 왼쪽, 오른쪽을 확인하여 y의 위치를 x로 바꿔준다
+				if p[y] == null
+					then root[T] <- x
+				else if y == left[p[y]]
+					then left[p[y]] <- x
+				else
+					right[p[y]] <- x
+					
+				// 삭제할 위치와 제시한 위치가 다를경우(z의 자식노드가 2개인 경우)
+				// y의 값을 z의 값으로 주입해주고 
+				// y의 위치에 존재하는 다른 값(왼쪽, 오른쪽, 부모 위치 값 등)도 z로 주입한다
+				if y != z
+					then key[z] <- key[y]
+					copy y's satellite data into z
+					
+				return y;
+				
+		3) 시간복잡도 : O(h)
+		
+		
+	[2] Summary Binary Search Tree
+	
+		- 각종 연산의 시간복잡도 : O(h)
+		- 그러나 최악의 경우 트리의 높이 h=O(n)
+		- 균형잡힌(balanced) 트리
+			- 레드-블랙 트리 등
+			- 키의 삽입이나 삭제시 추가로 트리의 균형을 잡아줌으로써 높이를 O(log n)으로 유지
